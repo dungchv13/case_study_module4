@@ -16,12 +16,12 @@ import java.util.Optional;
 @RequestMapping("/home")
 public class HomeController {
     @Autowired
-    private UserServiceImpl userServiceimpl;
+    private UserService userService;
 
     @GetMapping("/{id}")
     public String index(@PathVariable int id, Model model){
-        Optional<User> user = userServiceimpl.findById(id);
-        model.addAttribute("user", user);
-        return "index";
+        Optional<User> user = userService.findById(id);
+        model.addAttribute("user", user.get());
+        return "user/index";
     }
 }

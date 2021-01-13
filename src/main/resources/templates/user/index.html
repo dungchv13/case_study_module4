@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <title>Social Network</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +10,7 @@
 <style>
     html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
@@ -51,12 +52,12 @@
             <!-- Profile -->
             <div class="w3-card w3-round w3-white">
                 <div class="w3-container" >
-                    <h4 class="w3-center" th:text="${user.username}">My Profile</h4>
+                    <h4 class="w3-center" id="username"  th:text="${user.username}">My Profile</h4>
                     <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
                     <hr>
-                    <p th:text="${user.firstname}"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
-                    <p th:text="${user.address}"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
-                    <p th:text="${user.dateOfBirth}"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+                    <p id="phone" th:text="${user.phone}"><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+                    <p id="address" th:text="${user.address}"><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+                    <p id="dateOfBirth" th:text="${user.dateOfBirth}"><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
                 </div>
             </div>
             <br>
@@ -250,6 +251,7 @@
 </footer>
 
 <script>
+
     // Accordion
     function myFunction(id) {
         var x = document.getElementById(id);
@@ -273,6 +275,12 @@
         }
     }
 </script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+</script><script src="/assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+<script src="/js/dashboard.js"></script>
+<script src="/js/user.js"></script>
 </body>
 </html>
